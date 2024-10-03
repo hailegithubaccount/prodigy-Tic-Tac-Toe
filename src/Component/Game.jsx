@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import "./Game.css"
 
 function Square({ value, onClick }) {
-  return (
+  return (np
     <button className="square" onClick={onClick}>
+
       {value}
     </button>
   );
 }
 
-function Stopwatch() {
+function Game() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
 
@@ -65,4 +67,4 @@ function calculateWinner(squares) {
   return null;
 }
 
-export default Stopwatch;
+export default Game;

@@ -1,0 +1,23 @@
+.square {
+    width: 100px;      /* Fixed width */
+    height: 100px;     /* Fixed height */
+    font-size: 100px; 
+    color: red; /* Font size for X or O */
+    display: flex;    /* Flexbox layout */
+    align-items: center;  /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    background-color:orange; /* Background color */
+    border: 2px solid #000; /* Border */
+    cursor: pointer;  /* Pointer cursor on hover */
+  }
+  
+  .board-row {
+    margin-left: 200px;
+    display: flex;    /* Use flexbox for rows */
+  }
+  
+  .status {
+    margin-bottom: 20px; /* Space below the status text */
+    font-size: 20px;    /* Status font size */
+  }
+  
