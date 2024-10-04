@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import "./Game.css"
 
 function Square({ value, onClick }) {
-  return (np
+  return (
     <button className="square" onClick={onClick}>
-
       {value}
     </button>
   );
@@ -13,6 +12,12 @@ function Square({ value, onClick }) {
 function Game() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
+
+  // Function to handle the reset
+  function resetGame() {
+    setSquares(Array(9).fill(null)); // Reset squares to an empty state
+    setXIsNext(true); // Set the next player back to X
+  }
 
   function handleClick(i) {
     const newSquares = squares.slice();
@@ -26,7 +31,8 @@ function Game() {
   const status = winner ? `Winner: ${winner}` : `Next player: ${xIsNext ? 'X' : 'O'}`;
 
   return (
-    <div>
+    <div className='back'>
+      <div className='text'>Tic-Tac-Toe game</div>
       <div className="status">{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onClick={() => handleClick(0)} />
@@ -42,6 +48,11 @@ function Game() {
         <Square value={squares[6]} onClick={() => handleClick(6)} />
         <Square value={squares[7]} onClick={() => handleClick(7)} />
         <Square value={squares[8]} onClick={() => handleClick(8)} />
+      </div>
+      <div className='reset'>
+        <button className='btn' onClick={resetGame}>
+          Reset
+        </button>
       </div>
     </div>
   );
